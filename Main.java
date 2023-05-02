@@ -2,130 +2,134 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
 
-                    Scanner s = new Scanner(System.in);
-                    System.out.println();
-                    // Q1
-                    System.out.println("Input first number: ");
-                    int num0 = s.nextInt();
-                    System.out.println("Input second number: ");
-                    int num1 = s.nextInt();
-                    System.out.println(num0+" + "+num1+" = "+(num0+num1));
-                    System.out.println(num0+" - "+num1+" = "+(num0-num1));
-                    System.out.println(num0+" x "+num1+" = "+(num0*num1));
-                    System.out.println(num0+" / "+num1+" = "+(num0/num1));
-                    System.out.println(num0+" mod "+num1+" = "+(num0%num1));
-                    //end of Q1
+        //Q1
+        for(int i = 1; i<=100; i++){
+            if(i%3 == 0 && i%5 == 0){
+                System.out.println("FizzBuzz");
+                continue;
+            }
+            if(i%3 == 0){
+                System.out.println("Fizz");
+                continue;
+            }
+            if(i%5 == 0){
+                System.out.println("Buzz");
+                continue;
+            }
+            System.out.println(i);
+        }//enc of Q1
 
-                    //Q2
-                    System.out.println("Input a String: ");
-                    String stringA = s.nextLine();
-                    stringA = stringA.toLowerCase();
-                    System.out.println(stringA);
+        //Q2
+        System.out.println("Enter a string: ");
+        String data = s.nextLine();
+        String reverse ="";
+        for(int i = data.length()-1; i>=0;i--){
+            reverse = reverse + data.charAt(i);
+        }
+        System.out.println("Reverse string:"+reverse);
+        //End of Q2
 
-                    //end of Q2
+        //Q3
+        System.out.println("Enter a positive integer");
+        int pNumber = s.nextInt();
+        int result = 1;
+        for(int i = 1; i<=10; i++){
+            result = i * pNumber;
+            System.out.println(pNumber+" x "+i +" = "+result);
+        }//End of Q3
 
-                    //Q3
-                    System.out.println("Input a String: ");
-                    String string1 = s.nextLine();
-                    System.out.println("Input a number: ");
+        //Q4
+        System.out.println("Enter a number: ");
+        int faNumber = s.nextInt();
+        int faResult = faNumber;
+        for(int i =1 ; i<faResult; i++){
+            //n × (n - 1)
+            faNumber = faNumber * i;
+        }
+        System.out.println("the factorial of "+ faResult+" = "+faNumber);
+        //End of Q4
 
+        //Q5
+        System.out.println("Enter the first number");
+        int eNumber = s.nextInt();
+        System.out.println("Enter the power");
+        int power = s.nextInt();
+        int finalResult = eNumber;
+        while(power > 1){
+            finalResult = finalResult * eNumber;
+            power--;
+        }
+        System.out.println("the result is: "+finalResult);
+        // End of Q5
 
-                    int num2 = s.nextInt();
-                    System.out.println(string1.charAt(num2));
-                    //end of Q3
+        //Q6
+        System.out.println("Enter a number (-1 to exit): ");
+        int number6 = s.nextInt();
 
-                    //Q4
-                    System.out.println("Input a number: ");
-                    int num3 = s.nextInt();
-                    if(num3 % 2 == 0){
-                        System.out.println(1);
-                    }else{
-                        System.out.println(0);
-                    }
-                    //end of Q4
+        int evenSum = 0;
+        int oddSum = 0;
 
-                    //Q5
+        while(number6 != -1){
+            if(number6%2 == 0){
+                evenSum = evenSum + number6;
+            }else{
+                oddSum = oddSum +number6;
+            }
+            System.out.println("Enter another number (-1 to exit): ");
+            number6 = s.nextInt();
+        }
+        System.out.println("the sum of even numbers are: "+ evenSum +" and the sum of odd numbers are: "+ oddSum);
+        // End of Q6
+        // Q7
+        System.out.println("Enter a number");
+        int primeN = s.nextInt();
+        if(primeN > 1){
+            for(int i =2; i< primeN || primeN == 2; i++) {
+                if (primeN % i == 0 && primeN != 2) {
+                    System.out.println("number is not a prime number");
+                    break;
+                }
+                System.out.println("number is a prime number");
+                break;
+            }
 
-                    System.out.println("Input a role: ");
-                    String role = s.nextLine();
-                    if(role.equalsIgnoreCase("admin")){
-                        System.out.println("welcome admin");
-                    } else if (role.equalsIgnoreCase("superuser")) {
-                        System.out.println("welcome superuser");
+            }
 
-                    }else if(role.equalsIgnoreCase("user")){
-                        System.out.println("welcome user");
-                    }else{
-                        System.out.println("only: admin, superuser and user.");
-                    }
-                    //end of Q5
+        //Q8
+        System.out.println("Enter a number (-1 to exit): ");
+        int userN = s.nextInt();
+        int pCount = 0;
+        int nCount = 0;
+        int zCount = 0;
+        while(userN != -1){
+            if(userN > 0){
+                pCount++;
+            } else if (userN < 0) {
+                nCount++;
+            }else {
+                zCount++;
+            }
+            System.out.println("Enter a number (-1 to exit): ");
+            userN = s.nextInt();
+        }
+        System.out.println("count of positive number are: "+ pCount+" and count of negative numbers are: "+ nCount+" and the count of zero numbers are: "+zCount);
+        //End of Q8
 
-                    //Q6
-                    System.out.println("Input the first number: ");
-                    int fNumber = s.nextInt();
-                    System.out.println("Input the second number: ");
-                    int sNumber = s.nextInt();
-                    System.out.println("Input the third number: ");
-                    int tNumber = s.nextInt();
+        // Q9
 
-                    int reslut = fNumber + sNumber;
-                    if(reslut == tNumber){
-                        System.out.println("The result is: "+true);
-                    }else{
-                        System.out.println("The result is: "+false);
-                    }
-                    //end Q6
-
-                    //Q7
-                    System.out.println("Input the first number: ");
-                    int f1Number = s.nextInt();
-                    System.out.println("Input the second number: ");
-                    int s2Number = s.nextInt();
-                    System.out.println("Input the third number: ");
-                    int t3Number = s.nextInt();
-
-                    int max = f1Number;
-                    if(s2Number>max){
-                        max = s2Number;
-                    }if(t3Number>max){
-                        max = t3Number;
-                    }
-                    System.out.println("The greatest: "+max);
-
-                    //end of Q7
-
-                    //Q8
-                    System.out.println("Input number(1 to 7 only): ");
-                    int day = s.nextInt();
-                    switch (day) {
-                        case 1:
-                            System.out.println("Monday");
-                            break;
-                        case 2:
-                            System.out.println("Tuesday");
-                            break;
-                        case 3:
-                            System.out.println("Wednesday");
-                            break;
-                        case 4:
-                            System.out.println("Thursday");
-                            break;
-                        case 5:
-                            System.out.println("Friday");
-                            break;
-                        case 6:
-                            System.out.println("Saturday");
-                            break;
-                        case 7:
-                            System.out.println("Sunday");
-                            break;
-                    }
-
-
-
-
-
+        for(int i = 1; i <=4 ; i++){
+            System.out.println("Week: "+i);
+            for(int d = 1; d <= 7; d++){
+               System.out.println("Day"+d);
+            }
+        } //End of Q9
+        }
     }
 
-  }
+
+
+
+
+
