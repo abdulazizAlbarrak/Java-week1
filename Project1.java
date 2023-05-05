@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Main {
+public class Project1 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         boolean gameStatus = true;
