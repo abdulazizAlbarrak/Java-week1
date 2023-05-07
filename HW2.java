@@ -6,6 +6,7 @@ public class HW2 {
                     Scanner s = new Scanner(System.in);
                     System.out.println();
                     // Q1
+        try{
                     System.out.println("Input first number: ");
                     int num0 = s.nextInt();
                     System.out.println("Input second number: ");
@@ -15,6 +16,13 @@ public class HW2 {
                     System.out.println(num0+" x "+num1+" = "+(num0*num1));
                     System.out.println(num0+" / "+num1+" = "+(num0/num1));
                     System.out.println(num0+" mod "+num1+" = "+(num0%num1));
+        }catch(InputMismatchException e1){
+            System.out.prinln("You can only add integer numbers"):
+        }catch(ArithmeticException e2){
+            System.out.println(e2.getMessage());
+        }catch(Exception e3){
+            System.out,println(e3.getMessage());
+        }
                     //end of Q1
 
                     //Q2
